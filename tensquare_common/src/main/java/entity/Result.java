@@ -24,4 +24,16 @@ public class Result<T> implements Serializable {
     private String message;
 
     private T data;
+
+    public static <T> Result  success(String message,T t){
+        return Result.of(true,StatusCode.OK,message, t);
+    }
+
+    public static Result  success(String message){
+        return Result.of(true,StatusCode.OK,message, null);
+    }
+
+    public static <T> Result  error(String message){
+        return Result.of(false,StatusCode.ERROR,message, null);
+    }
 }

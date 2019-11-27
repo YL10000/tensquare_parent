@@ -1,5 +1,6 @@
 package com.tensquare.base.pojo;
 
+import com.tensquare.base.validator.State;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 //创建实体交给jpa管理
@@ -25,8 +27,11 @@ public class Label implements Serializable {
     @Id
     private String id;
 
+    @NotNull
     private String labelname;
 
+    @NotNull(message = "状态不能为空")
+    @State
     private String state;
 
     private Long count;
