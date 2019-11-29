@@ -1,0 +1,9 @@
+server:
+  port: 9009
+spring:
+  application:
+    name: tensquare-elastic-job
+elaticjob:
+    zookeeper:
+      server-lists: localhost:2181
+      namespace: tensquare-elastic-job
